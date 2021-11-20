@@ -1,5 +1,6 @@
 package com.toc.crc.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +9,7 @@ import com.toc.crc.entity.DataWord;
 import com.toc.crc.entity.RequestCheckSum;
 import com.toc.crc.entity.ResponseCheckSum;
 
+@CrossOrigin
 @RestController
 public class CheckSumController {
 	@PostMapping("/check-sum")
