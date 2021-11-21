@@ -30,17 +30,22 @@ public class HammingController {
         ar = calculation(ar, r);
         
         String generatedCode = "";
+        String sum = "";
         
         for(int i = 1; i < ar.length; i++) {
         	generatedCode = generatedCode + Character.forDigit(ar[i], 10);
+        	if(generatedCode.charAt(i-1) == '0')
+        		sum = sum + '1';
+        	else
+        		sum = sum + '0';
         }
 
         int isError = 0;
         
         String receivedMsg = input.getReceivedMsg();
         
-        for(int i = 0; i < generatedCode.length(); ++i) {
-        	if(generatedCode.charAt(i) != receivedMsg.charAt(i)) {
+        for(int i = 0; i < sum.length(); ++i) {
+        	if(sum.charAt(i) != receivedMsg.charAt(i)) {
         		isError = i+1;
         		break;
         	}
